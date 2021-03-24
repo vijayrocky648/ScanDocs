@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <style>
+      #images>img {
+         height: 50px;
+         padding-right: 1em;
+         max-width: fit-content;
+         justify-content: center;
+         align-items: center;
+      }
+
+      .container-fluid {
+         padding: 0px 250px 0px 250px;
+         font-size: 15px;
+         font-weight: 700;
+         justify-content: center;
+         align-items: center;
+         display: flex-start;
+      }
+
+      .d-block {
+         image-rendering: pixelated;
+      }
+
+      .headerName {
+         font-size: 30px;
+         color: blueviolet;
+      }
+
+      #navbarSupportedContent a:hover {
+         color: blue;
+      }
+
+      #navbarSupportedContent a {
+         transition: color 2s;
+      }
+
+      #Image {
+         background-color: red;
+      }
+      #content h1{
+            font-size:66px;
+            margin-bottom:4%;
+      }
+      #content h5{          
+            color: gray;
+      }
+     
+      @media screen and (max-width:1000px) {
+         .container-fluid {
+            padding: 0px;
+
+         }
+      }      
+   </style>
+</head>
+
+<body>
+   <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div id="images">
+            <img src="./Images/applogo.png" title="Scandocs" id="Details" onshow="name()">
+         </div>
+         <a class="navbar-brand headerName" href="#" id="AppName">Scandocs</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <li class="nav-item ul">
+                  <a class="nav-link active" aria-current="page" href="#">Features</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">About us</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">contact us</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <div class="row" style="margin-top: 5%;">
+         <div class="col-md-6" style="min-height:300px;padding:20px;">
+            <div id="content" style="height:100%;display: flex !important;justify-content: center;align-items:center;">
+               <div>
+                  <h1 id="Content1"></h1>
+                  <h5 id="Content2"></h5>
+               </div>              
+            </div>
+            <div id="content" style="height:100%;">
+
+            </div>
+         </div>
+         <div class="col-md-6" style="height:300px;">
+            <div id="Image" style="height:100%;">
+
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+   <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+         apiKey: "AIzaSyDcnL9_Ke49sFx5CTbKi0KeB9L5NSng0fY",
+         authDomain: "scandocs-96f60.firebaseapp.com",
+         projectId: "scandocs-96f60",
+         storageBucket: "scandocs-96f60.appspot.com",
+         messagingSenderId: "744508138419",
+         appId: "1:744508138419:web:f96bbc9b229b88279e61c6"
+      };
+      // Initialize Firebase
+      const firebasecheck = firebase.initializeApp(firebaseConfig);
+      var database = firebasecheck.firestore()
+      database.collection('IntroApp').get().then(function (datas) {
+         datas.forEach(element => {
+            var MainData = element.data();
+            console.log(MainData)
+            setAppName(MainData.AppName)
+            setContent(MainData.Content_1,MainData.Content_2)
+            
+         });
+      });
+      function setAppName(AppName) {
+         $('#AppName').text(AppName);
+      }
+      function setContent(Content1,Content2){
+         $('#Content1').text(Content1);
+         $('#Content2').text(Content2);
+      }
+   </script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
