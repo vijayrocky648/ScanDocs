@@ -75,7 +75,7 @@
             .customcard{
                 padding:20px 20px;
                 
-                height:400px;
+                height:300px;
                 width:100%;
             }
             .customcard > .card{
@@ -156,11 +156,11 @@
                         </div>
                         <div class="col-md-12 align-self-center">
                             <div class="customcard align-self-center " style="width:100%;">
-                                <div class="card h-100 text-white bg-dark mb-3">
+                                <div class="card h-80 text-white bg-dark mb-3">
                                     <div class="card-header">
                                       Featured
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body" id = "cardbody">
                                       <h5 class="card-title">Special title treatment</h5>
                                       <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                       <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -172,7 +172,7 @@
                  </div>
                  <div class="col-md-6">
                     <div class="customcard" style="margin-top: 2%;">
-                        <div class="card h-100">
+                        <div class="card h-80">
                             <div class="card-header">
                               Title 
                             </div>
@@ -184,11 +184,11 @@
                           </div>                        
                     </div>
                     <div class="customcard" style="margin-top: 6%;">
-                        <div class="card h-100">
+                        <div class="card h-80">
                             <div class="card-header">
                               Featured
                             </div>
-                            <div class="card-body  h-100">
+                            <div class="card-body  h-80">
                               <h5 class="card-title">Special title treatment</h5>
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                               <div class="d-flex align-items-end">
@@ -221,16 +221,24 @@
             // Initialize Firebase
             const firebasecheck = firebase.initializeApp(firebaseConfig);
             var database = firebasecheck.firestore();
+            database.collection("IntroApp").doc("vNLG1SUawgRiu6mFo0V2").collection("CardContent").get().then(function(datas){
+                console.log(datas.count);
+                //for(var i=0;i<datas.length)
+              /*datas.forEach(function(data){
+                  setCardContent(data.data());
+              });*/
+               
+            });
             database
                 .collection("IntroApp")
                 .get()
                 .then(function (datas) {
                     datas.forEach((element) => {
                         var MainData = element.data();
-                        console.log(MainData);
+                        ///console.log(MainData);
                         setAppName(MainData.AppName);
                         setContent(MainData.Content_1, MainData.Content_2);
-                        setimagecontent(MainData.Content_3);
+                        setimagecontent(MainData.Content_3);                        
                     });
                 });
             function setAppName(AppName) {
@@ -243,6 +251,10 @@
             function setimagecontent(content3){
                $('#contents').text(content3);
             }
+            function setCardContent(cardcontent){
+               console.log(cardcontent)
+            }
+            
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </body> 
