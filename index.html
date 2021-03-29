@@ -148,7 +148,7 @@
                     <img src="./social-media-1795578_1280.jpg" style="height: 220px; width: 100%;"/>
                 </div>
             </div>
-            <div class="row" style="margin-top: 6%;">
+            <div class="row" style="margin-top: 6%;" id="CardContentROW">
                  <div class="col-md-6 d-flex" style="padding:2%">
                     <div class="row">
                         <div class="col-md-12">
@@ -162,7 +162,7 @@
                                     </div>
                                     <div class="card-body" id = "cardbody">
                                       <h5 class="card-title">Special title treatment</h5>
-                                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                      <p class="card-text" id="CardDetails"></p>
                                       <a href="#" class="btn btn-primary">Go somewhere</a>
                                     </div>
                                   </div>
@@ -198,7 +198,6 @@
                           </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -221,21 +220,25 @@
             // Initialize Firebase
             const firebasecheck = firebase.initializeApp(firebaseConfig);
             var database = firebasecheck.firestore();
-            database.collection("IntroApp").doc("vNLG1SUawgRiu6mFo0V2").collection("CardContent").get().then(function(datas){
-                console.log(datas.count);
-                //for(var i=0;i<datas.length)
-              /*datas.forEach(function(data){
-                  setCardContent(data.data());
-              });*/
-               
-            });
+            //var database_set = firebase.database();
+           
+            
+            database.collection("IntroApp").doc("vNLG1SUawgRiu6mFo0V2").collection("CardContent").get().then(function(datas){  
+                let incrementvalue = 0;
+                datas.forEach((data,index)=>{                    
+                    var datacontents1 = data.data();                   
+                    setCardContent(datacontents1,incrementvalue);
+                    incrementvalue++;
+                })              
+            }
+            );
             database
                 .collection("IntroApp")
                 .get()
                 .then(function (datas) {
                     datas.forEach((element) => {
                         var MainData = element.data();
-                        ///console.log(MainData);
+                        ///////console.log(MainData);
                         setAppName(MainData.AppName);
                         setContent(MainData.Content_1, MainData.Content_2);
                         setimagecontent(MainData.Content_3);                        
@@ -251,8 +254,12 @@
             function setimagecontent(content3){
                $('#contents').text(content3);
             }
-            function setCardContent(cardcontent){
-               console.log(cardcontent)
+            function setCardContent(cardbody,index){              
+               let MainCard = $('#CardContentROW').find('.card')[index]
+              $(MainCard).find('.card-body').find('.card-text').text(cardbody.CardBody)
+              $(MainCard).find('.card-body').find('.card-title').text(cardbody.CardContent)
+              $(MainCard).find('.card-header').text(cardbody.CardTitle)
+              //.text(cardbody.CardBody);
             }
             
         </script>
