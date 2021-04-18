@@ -1,271 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-        <style>
-            #images > img {
-                height: 50px;
-                padding-right: 1em;
-                max-width: fit-content;
-                justify-content: center;
-                align-items: center;
-                border-radius: 1rem;
-            }
 
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        #images>img {
+            height: 50px;
+            padding-right: 1em;
+            max-width: fit-content;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+        }
+
+        .container-fluid {
+            padding: 0px 250px 0px 250px;
+            font-size: 15px;
+            justify-content: center;
+            align-items: center;
+            display: flex-start;
+
+        }
+
+        .d-block {
+            image-rendering: pixelated;
+        }
+
+        .headerName {
+            font-size: 30px;
+            color: blueviolet;
+        }
+
+        #navbarSupportedContent a:hover {
+            color: blue;
+        }
+
+        #navbarSupportedContent a {
+            transition: color 2s;
+        }
+
+        #Image>img {
+            width: 410px;
+            height: 500px;
+            image-rendering: pixelated;
+            border-radius: 1rem;
+
+        }
+
+        #content h1 {
+            font-size: 56px;
+            margin-bottom: 4%;
+
+        }
+
+        #content h5 {
+            color: gray;
+        }
+
+        @media screen and (max-width: 1000px) {
             .container-fluid {
-                padding: 0px 250px 0px 250px;
-                font-size: 15px;              
-                justify-content: center;
-                align-items: center;
-                display: flex-start;
-                
+                padding: 0px;
             }
- 
-            .d-block {
-                image-rendering: pixelated;
-            }
+        }
 
-            .headerName {
-                font-size: 30px;
-                color: blueviolet;
-            }
+        #row2 h1 {
+            background-color: lightcoral;
+            height: 120px;
+        }
 
-            #navbarSupportedContent a:hover {
-                color: blue;
-            }
+        .row #contents {
+            text-align: center;
+            padding-top: 5%;
+            font-family: "gilroy";
+            color: gray;
+            font-size: 20px;
+        }
 
-            #navbarSupportedContent a {
-                transition: color 2s;
-            }
+        .customcard {
+            padding: 20px 20px;
 
-            #Image > img {
-                width: 410px;
-                height: 500px;
-                image-rendering: pixelated;
-                border-radius: 1rem;
-                
-            }
-            #content h1 {
-                font-size: 56px;
-                margin-bottom: 4%;
-                
-            }
-            #content h5 {
-                color: gray;
-            }
+            height: 300px;
+            width: 100%;
+        }
 
-            @media screen and (max-width: 1000px) {
-                .container-fluid {
-                    padding: 0px;
-                }
-            }
-            #row2 h1 {
-                background-color: lightcoral;
-                height: 120px;
-            }
-            .row #contents{
-               text-align:  center;
-              padding-top: 5%;
-              font-family: "gilroy";
-              color: gray;
-              font-size: 20px;
-            }
-            .customcard{
-                padding:20px 20px;
-                
-                height:300px;
-                width:100%;
-            }
-            .customcard > .card{
-                box-shadow: -17px 16px 46px -9px rgba(0,0,0,0.53);
-            }
-            #carouselExampleControls img{
-                height:600px;
-                border-radius: 1rem;
-            }
-        </style>
+        .customcard>.card {
+            box-shadow: -17px 16px 46px -9px rgba(0, 0, 0, 0.53);
+        }
 
-    </head>
+        #carouselExampleControls img {
+            height: 600px;
+            border-radius: 1rem;
+        }
+        .featureRow{
+            height:220px;
+            width:100%;           
+            padding:4%;
+            display:flex;           
+            justify-content: center;
+            border-radius: 15px;
+        }
+    </style>
 
-    <body>
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div id="images">
-                    <img src="./Images/applogo.png" title="Scandocs" id="Details" onshow="name()" />
-                </div>
-                <a class="navbar-brand headerName" href="#" id="AppName">Scandocs</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item ul">
-                            <a class="nav-link active" aria-current="page" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">About us</a>
-                        </li>
-                        <li class="nav-item" id="Contact">
-                            <a class="nav-link active" aria-current="page" href="#">contact us</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="row" style="margin-top: 5%;">
-                <div class="col-md-6" style="min-height: 300px; padding: 20px;">
-                    <div id="content" style="height: 100%; display: flex !important; justify-content: center; align-items: center;">
-                        <div>
-                            <h1 id="Content1"></h1>
-                            <h5 id="Content2"></h5>
-                        </div>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div id="images">
+                <img src="./Images/applogo.png" title="Scandocs" id="Details" onshow="name()" />
+            </div>
+            <a class="navbar-brand headerName" href="#" id="AppName">Scandocs</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item ul">
+                        <a class="nav-link active" aria-current="page" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About us</a>
+                    </li>
+                    <li class="nav-item" id="Contact">
+                        <a class="nav-link active" aria-current="page" href="#">contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row" style="margin-top: 5%;">
+            <div class="col-md-6" style="min-height: 300px; padding: 20px;">
+                <div id="content"
+                    style="height: 100%; display: flex !important; justify-content: center; align-items: center;">
+                    <div>
+                        <h1 id="Content1"></h1>
+                        <h5 id="Content2"></h5>
                     </div>
                 </div>
-                <div class="col-md-6" style="min-height: 300px;display:flex;justify-content: center;">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"style="width: 60%;">
-                        <div class="carousel-inner" >
-                          <div class="carousel-item active">
+            </div>
+            <div class="col-md-6" style="min-height: 300px;display:flex;justify-content: center;">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 60%;">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
                             <img src="./Content_Images/image1.jpeg" class="d-block w-100" alt="...">
-                          </div>
-                          <div class="carousel-item">
+                        </div>
+                        <div class="carousel-item">
                             <img src="./Content_Images/image2.jpeg" class="d-block w-100" alt="...">
-                          </div>
-                          <div class="carousel-item">
+                        </div>
+                        <div class="carousel-item">
                             <img src="./Content_Images/image3.jpeg" class="d-block w-100" alt="...">
-                          </div>
-                          <div class="carousel-item">
+                        </div>
+                        <div class="carousel-item">
                             <img src="./Content_Images/image4.jpeg" class="d-block w-100" alt="...">
-                          </div>
-                           <div class="carousel-item">
+                        </div>
+                        <div class="carousel-item">
                             <img src="./Content_Images/image5.jpeg" class="d-block w-100" alt="...">
-                          </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
-            <div class="row" >
-               <div class="col-md-12">
-                     <h4 id="contents"></h4>
-               </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4 id="contents"></h4>
             </div>
-            <div class="row" id="row2" style="margin-top: 1%;">
-                <div class="col-md-2">
-                    <img src="./social-media-1795578_1280.jpg" style="height: 220px; width: 100%;"/>
-                </div>
-                <div class="col-md-2">
-                    <img src="./benefits-of-document-scanning.jpg" style="height: 220px; width: 100%;"/>
-                </div>
-                <div class="col-md-2">
-                    <img src="./social-media-1795578_1280.jpg" style="height: 220px; width: 100%;"/>
-                </div>
-                <div class="col-md-2">
-                    <img src="./social-media-1795578_1280.jpg" style="height: 220px; width: 100%;"/>
-                </div>
-                <div class="col-md-2">
-                    <img src="./social-media-1795578_1280.jpg" style="height: 220px; width: 100%;"/>
-                </div>
-                <div class="col-md-2">
-                    <img src="./social-media-1795578_1280.jpg" style="height: 220px; width: 100%;"/>
-                </div>
-             
-            </div>
-            <div class="row">
-                <div class="col-md-4 justify-content">
-                
+        </div>
+        <div class="row" id="row2" style="margin-top: 1%;">
+            <div class="col-md-3 p-3">
+                <div class="featureRow" style="background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212,255,1) 100%);">
+                    <div style="align-self: center;">
+                        <img src="./Images/ads.png" style="height: 80px;width: 80px;"></img>
+                        <h4 style="margin:8% 0% 0% 0%;color: white;text-anchor: start;">NO ADS</h4>
+                    </div>                   
                 </div>
             </div>
-            <div class="row" style="margin-top: 6%;" id="CardContentROW">
-                 <div class="col-md-6 d-flex" style="padding:2%">
-                    <div class="row">
-                        
-                        <div class="col-md-12 align-self-center">
-                            <div class="customcard align-self-center " style="width:100%;">
-                                <div class="card h-80 text-white bg-dark mb-3">
-                                    <div class="card-header">
-                                      Featured
-                                    </div>
-                                    <div class="card-body" id = "cardbody">
-                                      <h5 class="card-title">Special title treatment</h5>
-                                      <p class="card-text" id="CardDetails"></p>
-                                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                  </div>
+            <div class="col-md-3 p-3">
+                <div class="featureRow" style="background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(121,9,98,1) 37%, rgba(0,212,255,1) 100%);">
+                    <div style="align-self: center;">
+                        <img src="./Images/filter.png" style="height: 80px;width: 80px;"></img>
+                        <h4 style="margin:8% 0% 0% 0%;color: white;text-anchor: start;">15+ FILTER</h4>
+                    </div>                   
+                </div>
+            </div>
+            <div class="col-md-3 p-3">
+                <div class="featureRow" style="background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(115,35,99,1) 40%, rgba(200,6,6,1) 100%);">
+                    <div style="align-self: center;text-align: center;">
+                        <img src="./Images/filter.png" style="height: 80px;width: 80px;"></img>
+                        <h4 style="margin:8% 0% 0% 0%;color: white;text-anchor: start;">NO ADS</h4>
+                    </div>                   
+                </div>
+            </div>
+            <div class="col-md-3 p-3">
+                <div class="featureRow" style="background: linear-gradient(153deg, rgba(161,61,63,1) 0%, rgba(35,27,82,1) 49%, rgba(200,6,121,1) 100%);">
+                    <div style="align-self: center;text-align: center;">
+                        <img src="./Images/pdf.png" style="height: 80px;width: 80px;text-align: center;"></img>
+                        <h4 style="margin:8% 0% 0% 0%;color: white;text-align: center;">IMPORT & EXPORT</h4>
+                    </div>                   
+                </div>
+            </div>
+            <!---<div class="col-md-2">
+                    <img src="./social-media-1795578_1280.jpg" style="height: 220px; width: 100%;"/>
+                </div>
+                <div class="col-md-2">
+                    <img src="./social-media-1795578_1280.jpg" style="height: 220px; width: 100%;"/>
+                </div>
+                <div class="col-md-2">
+                    <img src="./social-media-1795578_1280.jpg" style="height: 220px; width: 100%;"/>
+                </div>--->
+
+        </div>
+        <div class="row " style="">
+            <div class="col-md-4 justify-content">
+
+            </div>
+        </div>
+        <div class="row" style="margin-top: 6%;" id="CardContentROW">
+            <div class="col-md-6 d-flex" style="padding:2%">
+                <div class="row">
+
+                    <div class="col-md-12 align-self-center">
+                        <div class="customcard align-self-center " style="width:100%;">
+                            <div class="card h-80 text-white bg-dark mb-3">
+                                <div class="card-header">
+                                    Featured
+                                </div>
+                                <div class="card-body" id="cardbody">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text" id="CardDetails"></p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                 </div>
-                 <div class="col-md-6">
-                    <div class="customcard" style="margin-top: 2%;">
-                        <div class="card h-80">
-                            <div class="card-header">
-                              Title 
-                            </div>
-                            <div class="card-body">
-                              <h5 class="card-title">Special title treatment</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>                        
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="customcard" style="margin-top: 2%;">
+                    <div class="card h-80">
+                        <div class="card-header">
+                            Title
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
-                    <div class="customcard" style="margin-top: 6%;">
-                        <div class="card h-80">
-                            <div class="card-header">
-                              Featured
-                            </div>
-                            <div class="card-body  h-80">
-                              <h5 class="card-title">Special title treatment</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              <div class="d-flex align-items-end">
+                </div>
+                <div class="customcard" style="margin-top: 6%;">
+                    <div class="card h-80">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body  h-80">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <div class="d-flex align-items-end">
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
-                              </div>                             
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
-  <!-- Vertically centered scrollable modal -->
-  <div class="modal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
+        <!-- Vertically centered scrollable modal -->
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+        
     </div>
-  </div>
-  
-   
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>This is the document scan applications</p>
-        <footer class="blockquote-footer">CopyRights@ vijay Rocky <cite title="Source Title">Scanned documents</cite></footer>
-      </blockquote>
+    <div class="container-fluid bg-dark" style="margin-top: 5%;">
+        <div class="row">
+            <div class="col-md-12">
+                <p style="text-align: center;margin: 0px;" class="text-white">CopyRights@ vijay Rocky Scanned documents</p>
+            </div>
+            
+        </div>
     </div>
-    <div id="footerwrap">
-        <footer id="footer" class="pagewidth clearfix" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
-        </div>
-<div class="main-col first clearfix">
-<div class="footer-left-wrap first">
-                            
-
-</div>
-
-<div class="footer-right-wrap">
-</div>
-
-        </div>
-
+       
+       
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
@@ -286,15 +320,15 @@
             const firebasecheck = firebase.initializeApp(firebaseConfig);
             var database = firebasecheck.firestore();
             //var database_set = firebase.database();
-           ///this is check
-            
-            database.collection("IntroApp").doc("vNLG1SUawgRiu6mFo0V2").collection("CardContent").get().then(function(datas){  
+            ///this is check
+
+            database.collection("IntroApp").doc("vNLG1SUawgRiu6mFo0V2").collection("CardContent").get().then(function (datas) {
                 let incrementvalue = 0;
-                datas.forEach((data,index)=>{                    
-                    var datacontents1 = data.data();                   
-                    setCardContent(datacontents1,incrementvalue);
+                datas.forEach((data, index) => {
+                    var datacontents1 = data.data();
+                    setCardContent(datacontents1, incrementvalue);
                     incrementvalue++;
-                })              
+                })
             }
             );
             database
@@ -306,7 +340,7 @@
                         ///////console.log(MainData);
                         setAppName(MainData.AppName);
                         setContent(MainData.Content_1, MainData.Content_2);
-                        setimagecontent(MainData.Content_3);                        
+                        setimagecontent(MainData.Content_3);
                     });
                 });
             function setAppName(AppName) {
@@ -316,24 +350,26 @@
                 $("#Content1").text(Content1);
                 $("#Content2").text(Content2);
             }
-            function setimagecontent(content3){
-               $('#contents').text(content3);
+            function setimagecontent(content3) {
+                $('#contents').text(content3);
             }
-            function setCardContent(cardbody,index){              
-               let MainCard = $('#CardContentROW').find('.card')[index]
-              $(MainCard).find('.card-body').find('.card-text').text(cardbody.CardBody)
-              $(MainCard).find('.card-body').find('.card-title').text(cardbody.CardContent)
-              $(MainCard).find('.card-header').text(cardbody.CardTitle)
-              //.text(cardbody.CardBody);
+            function setCardContent(cardbody, index) {
+                let MainCard = $('#CardContentROW').find('.card')[index]
+                $(MainCard).find('.card-body').find('.card-text').text(cardbody.CardBody)
+                $(MainCard).find('.card-body').find('.card-title').text(cardbody.CardContent)
+                $(MainCard).find('.card-header').text(cardbody.CardTitle)
+                //.text(cardbody.CardBody);
             }
-            function contactus(){
+            function contactus() {
                 $('#Contact').click()
                 alert('clicked');
-                }
-           
-                
-         
+            }
+
+
+
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </body> 
+    
+</body>
+
 </html>
