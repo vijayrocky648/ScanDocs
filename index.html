@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet"> 
     <style>
         #images>img {
             height: 50px;
@@ -23,6 +25,7 @@
             justify-content: center;
             align-items: center;
             display: flex-start;
+            font-family: 'Work Sans', sans-serif;
 
         }
 
@@ -76,8 +79,9 @@
             text-align: center;
             padding-top: 5%;
             font-family: "gilroy";
-            color: gray;
-            font-size: 20px;
+            color:black;
+            font-size: 40px;
+            
         }
 
         .customcard {
@@ -95,11 +99,12 @@
             height: 600px;
             border-radius: 1rem;
         }
-        .featureRow{
-            height:220px;
-            width:100%;           
-            padding:4%;
-            display:flex;           
+
+        .featureRow {
+            height: 220px;
+            width: 100%;
+            padding: 4%;
+            display: flex;
             justify-content: center;
             border-radius: 15px;
         }
@@ -122,13 +127,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item ul">
-                        <a class="nav-link active" aria-current="page" href="#">Features</a>
+                        <a class="nav-link active" aria-current="page" href="#" id="Feature">Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">About us</a>
                     </li>
                     <li class="nav-item" id="Contact">
-                        <a class="nav-link active" aria-current="page" href="#">contact us</a>
+                        <a class="nav-link active" aria-current="page" href="#" data-toggle="modal" data-target="#exampleModalCenter">contact us</a>
                     </li>
                 </ul>
             </div>
@@ -172,35 +177,39 @@
         </div>
         <div class="row" id="row2" style="margin-top: 1%;">
             <div class="col-md-3 p-3">
-                <div class="featureRow" style="background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212,255,1) 100%);">
+                <div class="featureRow"
+                    style="background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212,255,1) 100%);">
                     <div style="align-self: center;">
                         <img src="./Images/ads.png" style="height: 80px;width: 80px;"></img>
                         <h4 style="margin:8% 0% 0% 0%;color: white;text-anchor: start;">NO ADS</h4>
-                    </div>                   
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 p-3">
-                <div class="featureRow" style="background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(121,9,98,1) 37%, rgba(0,212,255,1) 100%);">
+                <div class="featureRow"
+                    style="background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(121,9,98,1) 37%, rgba(0,212,255,1) 100%);">
                     <div style="align-self: center;">
                         <img src="./Images/filter.png" style="height: 80px;width: 80px;"></img>
                         <h4 style="margin:8% 0% 0% 0%;color: white;text-anchor: start;">15+ FILTER</h4>
-                    </div>                   
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 p-3">
-                <div class="featureRow" style="background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(115,35,99,1) 40%, rgba(200,6,6,1) 100%);">
+                <div class="featureRow"
+                    style="background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(115,35,99,1) 40%, rgba(200,6,6,1) 100%);">
                     <div style="align-self: center;text-align: center;">
                         <img src="./Images/filter.png" style="height: 80px;width: 80px;"></img>
                         <h4 style="margin:8% 0% 0% 0%;color: white;text-anchor: start;">NO ADS</h4>
-                    </div>                   
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 p-3">
-                <div class="featureRow" style="background: linear-gradient(153deg, rgba(161,61,63,1) 0%, rgba(35,27,82,1) 49%, rgba(200,6,121,1) 100%);">
+                <div class="featureRow"
+                    style="background: linear-gradient(153deg, rgba(161,61,63,1) 0%, rgba(35,27,82,1) 49%, rgba(200,6,121,1) 100%);">
                     <div style="align-self: center;text-align: center;">
                         <img src="./Images/pdf.png" style="height: 80px;width: 80px;text-align: center;"></img>
                         <h4 style="margin:8% 0% 0% 0%;color: white;text-align: center;">IMPORT & EXPORT</h4>
-                    </div>                   
+                    </div>
                 </div>
             </div>
             <!---<div class="col-md-2">
@@ -271,105 +280,123 @@
             </div>
         </div>
         <!-- Vertically centered scrollable modal -->
-        <div class="modal" tabindex="-1">
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title">Contact US</h5>                        
                     </div>
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
+                    <div class="modal-body" id="modalbody">
+                        
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                         
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
     <div class="container-fluid bg-dark" style="margin-top: 5%;">
         <div class="row">
             <div class="col-md-12">
-                <p style="text-align: center;margin: 0px;" class="text-white">CopyRights@ vijay Rocky Scanned documents</p>
+                <p style="text-align: center;margin: 0px;" class="text-white">CopyRights@ vijay Rocky Scanned documents
+                </p>
             </div>
-            
+
         </div>
     </div>
-       
-       
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
-        <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyDcnL9_Ke49sFx5CTbKi0KeB9L5NSng0fY",
-                authDomain: "scandocs-96f60.firebaseapp.com",
-                projectId: "scandocs-96f60",
-                storageBucket: "scandocs-96f60.appspot.com",
-                messagingSenderId: "744508138419",
-                appId: "1:744508138419:web:f96bbc9b229b88279e61c6",
-            };
-            // Initialize Firebase
-            const firebasecheck = firebase.initializeApp(firebaseConfig);
-            var database = firebasecheck.firestore();
-            //var database_set = firebase.database();
-            ///this is check
 
-            database.collection("IntroApp").doc("vNLG1SUawgRiu6mFo0V2").collection("CardContent").get().then(function (datas) {
-                let incrementvalue = 0;
-                datas.forEach((data, index) => {
-                    var datacontents1 = data.data();
-                    setCardContent(datacontents1, incrementvalue);
-                    incrementvalue++;
-                })
-            }
-            );
-            database
-                .collection("IntroApp")
-                .get()
-                .then(function (datas) {
-                    datas.forEach((element) => {
-                        var MainData = element.data();
-                        ///////console.log(MainData);
-                        setAppName(MainData.AppName);
-                        setContent(MainData.Content_1, MainData.Content_2);
-                        setimagecontent(MainData.Content_3);
-                    });
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDcnL9_Ke49sFx5CTbKi0KeB9L5NSng0fY",
+            authDomain: "scandocs-96f60.firebaseapp.com",
+            projectId: "scandocs-96f60",
+            storageBucket: "scandocs-96f60.appspot.com",
+            messagingSenderId: "744508138419",
+            appId: "1:744508138419:web:f96bbc9b229b88279e61c6",
+        };
+        // Initialize Firebase
+        const firebasecheck = firebase.initializeApp(firebaseConfig);
+        var database = firebasecheck.firestore();
+        //var database_set = firebase.database();
+        ///this is check
+
+        database.collection("IntroApp").doc("NOnSdm6JBpieRy3kCiI8").get().then(function (data){
+            console.log(data.data())
+            var datas = data.data().Mail_ID;
+            contact(datas);
+        })
+
+
+        database.collection("IntroApp").doc("vNLG1SUawgRiu6mFo0V2").collection("CardContent").get().then(function (datas) {
+            let incrementvalue = 0;
+            datas.forEach((data, index) => {
+                var datacontents1 = data.data();
+                setCardContent(datacontents1, incrementvalue);
+                incrementvalue++;
+            })
+        }
+        );
+        database
+            .collection("IntroApp")
+            .get()
+            .then(function (datas) {
+                datas.forEach((element) => {
+                    var MainData = element.data();
+                    ///////console.log(MainData);
+                    setAppName(MainData.AppName);
+                    setContent(MainData.Content_1, MainData.Content_2);
+                    setimagecontent(MainData.Content_3);
                 });
-            function setAppName(AppName) {
-                $("#AppName").text(AppName);
-            }
-            function setContent(Content1, Content2) {
-                $("#Content1").text(Content1);
-                $("#Content2").text(Content2);
-            }
-            function setimagecontent(content3) {
-                $('#contents').text(content3);
-            }
-            function setCardContent(cardbody, index) {
-                let MainCard = $('#CardContentROW').find('.card')[index]
-                $(MainCard).find('.card-body').find('.card-text').text(cardbody.CardBody)
-                $(MainCard).find('.card-body').find('.card-title').text(cardbody.CardContent)
-                $(MainCard).find('.card-header').text(cardbody.CardTitle)
-                //.text(cardbody.CardBody);
-            }
-            function contactus() {
-                $('#Contact').click()
-                alert('clicked');
-            }
+            });
+        function setAppName(AppName) {
+            $("#AppName").text(AppName);
+        }
+        function setContent(Content1, Content2) {
+            $("#Content1").text(Content1);
+            $("#Content2").text(Content2);
+        }
+        function setimagecontent(content3) {
+            $('#contents').text(content3);
+        }
+        function setCardContent(cardbody, index) {
+            let MainCard = $('#CardContentROW').find('.card')[index]
+            $(MainCard).find('.card-body').find('.card-text').text(cardbody.CardBody)
+            $(MainCard).find('.card-body').find('.card-title').text(cardbody.CardContent)
+            $(MainCard).find('.card-header').text(cardbody.CardTitle)
+            //.text(cardbody.CardBody);
+        }
+        function contactus() {
+            $('#Contact').click()
+            alert('clicked');
+        }
+        $('#Feature').click(function () {
+            
+            $("html, body").animate({
+                    scrollTop:$("#CardContentROW").height()+100
+            }, 2000);
+        })
+        function contact(contact){
+                    $('#modalbody').text(contact);
+            
+        }
 
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        
+    </script>
 
-
-        </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
 </body>
 
 </html>
