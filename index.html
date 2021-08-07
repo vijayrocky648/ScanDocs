@@ -16,6 +16,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <style>
         #images>img {
             height: 50px;
@@ -26,6 +31,9 @@
             border-radius: 1rem;
         }
 
+        #Content1 {
+            font-weight: 550;
+        }
 
         #Content1 span {
             color: #7C83FD;
@@ -135,6 +143,21 @@
         }
     </style>
     <style type="text/css">
+        
+        .customAnimate:hover{
+           text-decoration: none;
+           background-color:white;
+           color:#2174EA;
+        }
+        .customAnimate{
+            transition:all 1s;
+            background-color:#2174EA;
+            color:white;
+        }
+        .customCard {
+            background-color: #F5F7FD;
+        }
+
         .hide {
             display: none !important;
         }
@@ -237,12 +260,22 @@
             align-items: center;
         }
 
+        .replace-me {
+            font-size: 10px;
+            padding-left: 1px !important;
+        }
+
+        .alignmobile {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
         .alignmobile h1 {
-            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-family: 'Fira Sans Condensed', sans-serif;
         }
 
         .alignmobile span {
-            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-family: 'Fira Sans Condensed', sans-serif;
             width: 100%;
             font-size: 25px;
         }
@@ -253,6 +286,11 @@
 
 
         @media screen and (max-width:800px) {
+            #AppName>span{
+                text-align:center;
+                width:100%;
+                display: table;
+            }
             .alignmobile h1 {
                 text-align: center;
             }
@@ -302,7 +340,10 @@
                     <div id="images">
                         <img src="./Images/applogo.png" title="Scandocs" id="Details" onshow="name()" />
                     </div>
-                    <a class="navbar-brand headerName" href="#" id="AppName">Scandocs</a>
+                    <a class="navbar-brand headerName" href="#" id="AppName">Scandocs
+                        <span
+                            class="replace-me">AdFree,More Features</span>
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -339,11 +380,11 @@
                     style="height: 100%; display: flex !important; justify-content: center; align-items: center;">
                     <div>
                         <h1 id="Content1">
-                            Go <span>paperless</span> and keep important <span>documents</span> alongside your notes.
+                            Go <span>paperless</span> and keep important
+                            <span>documents</span> alongside your notes.
                         </h1>
                         <h5 id="Content2">
-                            Keep all your important papers with you whenever and wherever you need them: healthcare and
-                            insurance files, warranty and product information, invoices, receipts, and more
+                            Scandocs is a digital document-keeping app using which you can add all your documents.
                         </h5>
                     </div>
                 </div>
@@ -441,13 +482,13 @@
                 </div>
             </div>
         </div>
-        <div class="row " style="justify-content: center;">
+        <div class="row " style="justify-content: center;margin-top:5%;">
             <div class="col-md-4 p-4">
                 <div class="directliknkcard">
-                    <div class="card h-40 p-4" style="text-align: center;">
-                        <h5 class="card-title">DirectDownload</h5>
+                    <div class="card h-40 p-4 customCard" style="text-align: center;">
+                        <h5 class="card-title customCardTitle">DirectDownload</h5>
                         <p>Find the Android app using below link</p>
-                        <div class="card-header" style="color: #ffff;background-color: #542e71;cursor: pointer;">
+                        <div class="card-header customAnimate">
                             Download
                         </div>
                     </div>
@@ -455,13 +496,14 @@
             </div>
             <div class="col-md-4 p-4">
                 <div class="directliknkcard">
-                    <div class="card h-40 p-4" style="text-align: center;">
-                        <h5 class="card-title">GOOGLE DRIVE</h5>
-                        <p>Download the google drive application</p>
-                        <div class="card-header" id="Gdrive"
-                            style="color: #ffff;background-color: #542e71;cursor: pointer;">
+                    <div class="card h-40 p-4 customCard" style="text-align: center;">
+                        <h5 class="card-title customCardTitle">Play Store</h5>
+                        <p>Download the application from play store</p>
+                        <a class="card-header customAnimate" id="Gdrive"
+                            href="https://play.google.com/store/apps/details?id=com.doc.documentscanner&hl=en_IN&gl=US"
+                            target="_blank">
                             Download
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -481,7 +523,6 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
                 </div>
             </div>
         </div>
@@ -507,7 +548,20 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+        <script src="./scripts/replaceme.min.js"></script>
         <script>
+            var replace = new ReplaceMe(document.querySelector('.replace-me'), {
+                animation: 'animated fadeIn',                       // Animation class or classes
+                speed: 2000,                                        // Delay between each phrase in miliseconds
+                separator: ',',                                     // Phrases separator
+                hoverStop: false,                                   // Stop rotator on phrase hover
+                clickChange: false,                                 // Change phrase on click
+                loopCount: 'infinite',                              // Loop Count - 'infinite' or number
+                autoRun: true,                                      // Run rotator automatically
+                onInit: false,                                      // Function
+                onChange: false,                                    // Function
+                onComplete: false                                   // Function
+            });
             $("#scrollingPage").removeClass("hide");
             // Your web app's Firebase configuration
             var firebaseConfig = {
@@ -547,7 +601,7 @@
                 datas.forEach((element) => {
                     var MainData = element.data();
                     ///////console.log(MainData);
-                    setAppName(MainData.AppName);
+                    ///setAppName(MainData.AppName);
                     setContent(MainData.Content_1, MainData.Content_2);
                     setimagecontent(MainData.Content_3);
                     $("#scrollingPage").addClass("hide")
@@ -579,7 +633,7 @@
             }
             $('#Feature').click(function () {
                 $("html, body").animate({
-                    scrollTop: $("#row2").height() + 300
+                    scrollTop: $("#contents").height() + 600
                 }, 1000);
             })
 
@@ -592,10 +646,7 @@
                 console.log(event)
             })
         </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
 
-        </script>
 
 </body>
 
