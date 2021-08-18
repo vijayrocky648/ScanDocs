@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ScanDocs</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
@@ -22,10 +22,11 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <style>
-        #content img{
-            width:250px;
-            height:100px;
+        #content img {
+            width: 250px;
+            height: 100px;
         }
+
         #images>img {
             height: 50px;
             padding-right: 1em;
@@ -47,6 +48,11 @@
             position: sticky;
             top: 0%;
             z-index: 10;
+        }
+
+        .bg-blue-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgba(245, 247, 253, var(--tw-bg-opacity));
         }
 
         .container-fluid {
@@ -116,16 +122,10 @@
 
         }
 
-        .customcard {
-            padding: 20px 20px;
 
-            height: 300px;
-            width: 100%;
-        }
 
-        .customcard>.card {
-            box-shadow: -17px 16px 46px -9px rgba(0, 0, 0, 0.53);
-        }
+
+
 
         #carouselExampleControls img {
             height: 600px;
@@ -147,19 +147,25 @@
         }
     </style>
     <style type="text/css">
-        
-        .customAnimate:hover{
-           text-decoration: none;
-           background-color:white;
-           color:#2174EA;
+        .customAnimate:hover {
+            text-decoration: none;
+            background-color: white;
+            color: #2174EA;
         }
-        .customAnimate{
-            transition:all 1s;
-            background-color:#2174EA;
-            color:white;
+
+        .customAnimate {
+            cursor: pointer;
+            transition: all 1s;
+            background-color: #2174EA;
+            color: white;
         }
+
         .customCard {
             background-color: #F5F7FD;
+            padding: 20px 20px;
+            border-radius: 15px;
+            width: 100%;
+            box-shadow: -17px 16px 46px -9px rgba(0, 0, 0, 0.53);
         }
 
         .hide {
@@ -249,7 +255,7 @@
             width: 100%;
             margin-top: 2%;
             align-items: center;
-
+            border-radius: 15px;
 
         }
 
@@ -291,15 +297,21 @@
 
         @media screen and (max-width:800px) {
 
-            #userAlert{
-                width:100%;
+            #userAlert {
+                width: 100%;
                 text-align: center;
             }
-            #AppName>span{
-                text-align:center;
-                width:100%;
+
+            #userAlert span {
+                font-size: 10px;
+            }
+
+            #AppName>span {
+                text-align: center;
+                width: 100%;
                 display: table;
             }
+
             .alignmobile h1 {
                 text-align: center;
             }
@@ -342,16 +354,15 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-light" id="navbarheader">
+    <div class="container-fluid bg-blue-100" id="navbarheader">
         <div class="row">
             <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg navbar-light">
                     <div id="images">
                         <img src="./Images/applogo.png" title="Scandocs" id="Details" onshow="name()" />
                     </div>
                     <a class="navbar-brand headerName" href="#" id="AppName">Scandocs
-                        <span
-                            class="replace-me">AdFree,More Features</span>
+                        <span class="replace-me">Safe,Secure,Ad Free</span>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -395,9 +406,13 @@
                         <h5 id="Content2">
                             Scandocs is a digital document-keeping app using which you can add all your documents.
                         </h5>
-                        <a href="https://play.google.com/store/apps/details?id=com.doc.documentscanner&hl=en_IN&gl=US" target="_blank" rel="noopener noreferrer"></a> <img src="./Images/google-play-badge.png" alt="playstore" srcset="">
+                        <a href="https://play.google.com/store/apps/details?id=com.doc.documentscanner&hl=en_IN&gl=US"
+                            target="_blank" rel="noopener noreferrer"></a> <img src="./Images/google-play-badge.png"
+                            alt="playstore" srcset="">
                         <div style="margin-top:5%;" id="userAlert">
-                             <span class="p-2" style="background-color:#FFE6E6;opacity:.8;color:#BD1616;border-radius:5px;">Note: Scandocs does not store any of your information</span>
+                            <span class="p-2"
+                                style="background-color:#FFE6E6;opacity:.8;color:#BD1616;border-radius:5px;">Note:
+                                Scandocs does not store any of your information</span>
                         </div>
                     </div>
                 </div>
@@ -494,12 +509,12 @@
                     <span>Secure your documents by enabling applock feature</span>
                 </div>
             </div>
-        </div>
-        <div class="row " style="justify-content: center;margin-top:3.5%;">
+        </div>        
+       <!--<div class="row " style="justify-content: center;margin-top:3.5%;">
             <div class="col-md-4 p-4">
                 <div class="directliknkcard">
                     <div class="card h-40 p-4 customCard" style="text-align: center;">
-                        <h5 class="card-title customCardTitle">DirectDownload</h5>
+                        <h5 class="card-title customCardTitle">Direct Download</h5>
                         <p>Find the Android app using below link</p>
                         <div class="card-header customAnimate">
                             Download
@@ -522,7 +537,7 @@
             </div>
 
         </div>
-    </div>
+    </div>--> 
     <!-- Vertically centered scrollable modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-2" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -541,6 +556,29 @@
         </div>
     </div>
 
+    </div>
+    <div class="container-fluid bg-blue-100" style="margin-top:2%;padding-top:5%;padding-bottom:5%;">
+        <div class="row align-items-center">
+            <div class="col-md-2 col-sm-12">
+                <img src="./Images/applogo.png" class="img-fluid"  style="border-radius:10px;" alt="" srcset="">
+            </div>
+            <div class="col-md-7">
+                 <div class="row">
+                     <div class="col-md-12">
+                        <h4>Go Digital, Go Paperless</h4>
+                     </div>
+                     <div class="col-md-12">
+                        <h1>Download CashBook Now!</h1>
+                    </div>
+                    <div class="col-md-12">
+                        <h5>CashBook is available on Google Playstore and Desktop</h5>
+                    </div>
+                 </div>
+            </div>
+            <div class="col-md-3">
+                 <img src="./Images/google-play-badge.png" style="width:100%;" class="image-fluid" alt="" srcset="">
+            </div>
+        </div>
     </div>
     <div class="container-fluid" style="margin-top: 5%;">
         <div class="row">
